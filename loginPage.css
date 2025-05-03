@@ -1,0 +1,269 @@
+@font-face {
+  font-family: 'BundayClean-bold';
+  src: url('./font/BundayClean-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BundayClean-ExBold';
+  src: url('./font/Buntype\ -\ BundayClean-ExBoldUpIt.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BundayClean-semiBold';
+  src: url('./font/Buntype\ -\ BundayClean-SeBold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BundayClean-seLighIt';
+  src: url('./font/Buntype\ -\ BundayClean-SeLighIt.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+.bold-font {
+  font-family: 'BundayClean-bold', sans-serif;
+}
+.extra-bold {
+  font-family: 'BundayClean-ExBold', sans-serif;
+}
+.semi-Bold {
+  font-family: 'BundayClean-semiBold', sans-serif;
+}
+.semi-lignt {
+  font-family: 'BundayClean-seLighIt', sans-serif;
+}
+
+
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scroll */
+}
+
+.page1__background {
+  background: url('./images/loginpage/bg-Image.png') no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh; /* Exact viewport height */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px; /* For mobile navbar */
+  box-sizing: border-box;
+  overflow: hidden; /* Lock overflow */
+  padding-bottom: 120px !important; /* ensure space below */
+
+}
+/* Add this to your CSS */
+.top-custom {
+  top: 80px;
+}
+
+
+.page1__triangle {
+  width: 60vw;
+  max-width: 1000px;
+  aspect-ratio: 1 / 0.5;
+  background: url('./images/loginpage/middle-triangle.png') no-repeat center center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  color: white;
+  position: relative;
+  flex-shrink: 1;
+}
+
+.triangle-content {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 300px;
+}
+
+.page1__triangle form {
+  width: 100%;
+}
+
+.page1__triangle .form-control {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 6px 10px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.page1__triangle h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.page1__triangle p {
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.page1__triangle button {
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+.mobile-navbar {
+
+  background-color: #076EBF;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 1000;
+}
+
+.logo-size{
+  margin-top: 15px;
+  height: 100px;
+}
+.navbar-logo {
+  height: 30px;
+  width: auto;
+}
+
+.navbar-slogan {
+  height: 60px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+;
+  transform: translateX(-50%);
+}
+
+.mobile-footer {
+  background-color: #076EBF;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+}
+
+.bgRedBg {
+  bottom: 0px;
+  width: 75%;
+  padding: 2rem;
+  z-index: 10;
+  background-color: #D62A34;
+}
+
+/* 🔧 Mobile-specific layout (force fit in screen) */
+@media (max-width: 1024px) {
+  .page1__background {
+    background: url('./images/loginpage/mobileBg.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .page1__triangle {
+    width: 100vw;
+    aspect-ratio: 1 / 0.55;
+    background-size: 100% 100%;
+  }
+
+  .triangle-content {
+    width: 90%;
+    max-width: 280px;
+    bottom: 3%; /* Adjusted to move content slightly higher */
+  }
+
+  /* Form adjustments for mobile */
+  .page1__triangle h2 {
+    font-size: 1rem; /* Smaller heading */
+    margin-bottom: 0.2rem;
+  }
+
+  .page1__triangle p {
+    font-size: 0.7rem; /* Smaller label text */
+    margin-bottom: 0.2rem;
+  }
+
+  .page1__triangle .form-control {
+    padding: 4px 8px; /* Smaller padding */
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+    height: 28px; /* Fixed height for inputs */
+    min-height: 28px; /* Ensure minimum height */
+    line-height: 1.2; /* Better text alignment */
+  }
+
+  .page1__triangle form {
+    margin-top: -0.5rem; /* Reduce top margin */
+  }
+
+  .page1__triangle button {
+    font-size: 0.6rem; /* Smaller button text */
+    padding: 4px 12px; /* Smaller button */
+    height: 28px; /* Match input height */
+    line-height: 1; /* Better text alignment */
+    margin-top: 0.2rem;
+  }
+
+
+  /* Adjust the red box content */
+  .bgRedBg {
+    padding: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1rem !important;
+    width: 90% !important; /* Make slightly narrower */
+  }
+  
+  .bgRedBg{
+    height: 20px; /* Smaller logo */
+  }
+  
+  .logo-img {
+    height: 30px !important;
+    object-fit: contain !important;
+  }
+  
+  .bgRedBg p {
+    font-size: 10px !important;
+    margin-top: 0.5rem !important;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+
+  .desktop-header {
+    display: none;
+  }
+
+  
+}
+@media (min-width: 768px) {
+  .mobile-navbar,
+  .mobile-footer {
+    display: none;
+  }
+
+  .page1__background {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
