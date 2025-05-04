@@ -102,6 +102,10 @@ html, body {
   width: 100%;
 }
 
+.logo-img {
+  height: 30px;
+  object-fit: contain;
+}
 .page1__triangle .form-control {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
@@ -164,6 +168,7 @@ html, body {
 }
 
 .bgRedBg {
+  position: absolute;
   bottom: 0px;
   width: 75%;
   padding: 2rem;
@@ -225,17 +230,30 @@ html, body {
     margin-top: 0.2rem;
   }
 
+  .bgRedBg {
+    position: relative !important;
+    height: 100px !important; /* Adjust height for mobile */
+    width: 100% !important; /* Full width */
+    padding: 10rem;
+    z-index: 10;
+    background-color: #D62A34;
+    /* justify-content: center !important; */
+  }
 
   /* Adjust the red box content */
   .bgRedBg {
     padding: 0.5rem !important;
     margin-top: 0.5rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0rem !important;
     width: 90% !important; /* Make slightly narrower */
   }
   
   .bgRedBg{
     height: 20px; /* Smaller logo */
+  }
+  .SetSEResolution{
+    margin-bottom: 10px !important;
+    font-size: 17px !important;
   }
   
   .logo-img {
@@ -255,6 +273,8 @@ html, body {
   }
 
   
+
+  
 }
 @media (min-width: 768px) {
   .mobile-navbar,
@@ -265,5 +285,18 @@ html, body {
   .page1__background {
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+}
+
+@media (max-width: 376px) {
+
+  .SetMarginClass{
+    margin: 10px 0px !important;
+  }
+
+  .SetSEResolution{
+    margin-bottom: 5px !important;
+    font-size: 16px !important;
   }
 }
