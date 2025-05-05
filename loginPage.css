@@ -1,3 +1,11 @@
+/* Base font size set to 16px (1rem = 16px) */
+
+/* Global Font Size */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+/* Font Face Definitions */
 @font-face {
   font-family: 'BundayClean-bold';
   src: url('./font/BundayClean-Bold.ttf') format('truetype');
@@ -26,8 +34,7 @@
   font-style: normal;
 }
 
-
-
+/* Bold Font */
 .bold-font {
   font-family: 'BundayClean-bold', sans-serif;
 }
@@ -41,10 +48,7 @@
   font-family: 'BundayClean-seLighIt', sans-serif;
 }
 
-
-
-
-
+/* Basic Page Styles */
 html, body {
   height: 100%;
   margin: 0;
@@ -62,21 +66,16 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 60px; /* For mobile navbar */
+  padding-top: 3.75rem; /* 60px */
   box-sizing: border-box;
-  overflow: hidden; /* Lock overflow */
-  padding-bottom: 120px !important; /* ensure space below */
-
-}
-/* Add this to your CSS */
-.top-custom {
-  top: 80px;
+  overflow: hidden;
+  padding-bottom: 7.5rem !important; /* 120px */
 }
 
-
+/* Triangle Section */
 .page1__triangle {
-  width: 60vw;
-  max-width: 1000px;
+  width: 90vw;
+  max-width: 73.5rem; /* 1000px */
   aspect-ratio: 1 / 0.5;
   background: url('./images/loginpage/middle-triangle.png') no-repeat center center;
   background-size: contain;
@@ -91,70 +90,92 @@ html, body {
 
 .triangle-content {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 18.75rem; /* 300px */
 }
 
 .page1__triangle form {
   width: 100%;
+
 }
 
 .logo-img {
-  height: 30px;
+  height: 1.875rem; /* 30px */
   object-fit: contain;
 }
+
 .page1__triangle .form-control {
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
-  padding: 6px 10px;
-  margin-bottom: 8px;
+  padding: 0.375rem 0.625rem; /* 6px 10px */
+  margin-bottom: 0.5rem; /* 8px */
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.85rem; /* 14px */
 }
 
 .page1__triangle h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.1rem; /* 18px */
+  margin-bottom: 0.2rem; /* 3px */
 }
 
 .page1__triangle p {
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
+  font-size: 0.9rem; /* 14px */
+  margin-bottom: 0.5rem; /* 8px */
 }
 
 .page1__triangle button {
-  font-size: 0.85rem;
-  padding: 6px 12px;
+  font-size: 0.85rem; /* 14px */
+  padding: 0.375rem 0.75rem; /* 6px 12px */
 }
 
-.mobile-navbar {
+.SetSEResolution{
+  font-size: 2.725rem !important; /* 18px */
+  white-space: nowrap;
+}
 
+.btn{
+  padding: 10px 25px !important;
+  margin-top: 10px;
+  border-radius: 12px;
+  color: aliceblue;
+  background-color: #D62A34;
+  font-size: 1rem !important;  /* 18px */
+}
+.btn:hover{
+  background-color: #991f25;
+  color: white;
+}
+
+
+
+
+.mobile-navbar {
   background-color: #076EBF;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 90px;
+  height: 5.625rem; /* 90px */
   z-index: 1000;
 }
 
-.logo-size{
-  margin-top: 15px;
-  height: 100px;
+.logo-size {
+  margin-top: 0.9375rem; /* 15px */
+  height: 6.25rem; /* 100px */
 }
+
 .navbar-logo {
-  height: 30px;
+  height: 1.875rem; /* 30px */
   width: auto;
 }
 
 .navbar-slogan {
-  height: 60px;
+  height: 3.75rem; /* 60px */
   width: auto;
   position: absolute;
   left: 50%;
-;
   transform: translateX(-50%);
 }
 
@@ -163,119 +184,120 @@ html, body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 3.75rem; /* 60px */
   z-index: 1000;
+}
+
+.middleText{
+  font-size: 1.8rem !important; /* 24px */
+  margin-top: 0.625rem; /* 10px */
+  margin-bottom: 0.625rem; /* 10px */
 }
 
 .bgRedBg {
   position: absolute;
   bottom: 0px;
-  width: 75%;
-  padding: 2rem;
+  width: 70vw;
+  max-width: 65.5rem; /* 1000px */  padding: 1.7rem;
   z-index: 10;
   background-color: #D62A34;
 }
 
-/* 🔧 Mobile-specific layout (force fit in screen) */
+/* Mobile-specific layout (max-width: 1024px) */
 @media (max-width: 1024px) {
   .page1__background {
     background: url('./images/loginpage/mobileBg.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 3.75rem; /* 60px */
+    padding-bottom: 3.75rem; /* 60px */
+  }
+
+  .FontSize {
+    font-size: 0.5625rem !important; /* 9px */
   }
 
   .page1__triangle {
-    width: 100vw;
-    aspect-ratio: 1 / 0.55;
+    width: 90vw;
+    aspect-ratio: 1 / 0.75;
     background-size: 100% 100%;
   }
 
   .triangle-content {
     width: 90%;
-    max-width: 280px;
-    bottom: 3%; /* Adjusted to move content slightly higher */
+    max-width: 17.5rem; /* 280px */
+    bottom: 3%;
   }
 
-  /* Form adjustments for mobile */
   .page1__triangle h2 {
-    font-size: 1rem; /* Smaller heading */
-    margin-bottom: 0.2rem;
+    font-size: 1rem !important; /* 16px */
+    margin-bottom: 0.125rem; /* 2px */
   }
 
   .page1__triangle p {
-    font-size: 0.7rem; /* Smaller label text */
-    margin-bottom: 0.2rem;
+    font-size: 0.5rem; /* 8px */
+    margin-bottom: 0.0625rem; /* 1px */
   }
 
   .page1__triangle .form-control {
-    padding: 4px 8px; /* Smaller padding */
-    font-size: 0.7rem;
-    margin-bottom: 4px;
-    height: 28px; /* Fixed height for inputs */
-    min-height: 28px; /* Ensure minimum height */
-    line-height: 1.2; /* Better text alignment */
+    padding: 0.125rem 0.25rem; /* 2px 4px */
+    font-size: 0.7rem; /* 11px */
+    margin-bottom: 0.25rem; /* 4px */
+    height: 1.75rem; /* 28px */
+    min-height: 1.75rem; /* 28px */
+    line-height: 1.2;
   }
 
   .page1__triangle form {
-    margin-top: -0.5rem; /* Reduce top margin */
+    margin-top: -0.3125rem; /* -5px */
   }
 
   .page1__triangle button {
-    font-size: 0.6rem; /* Smaller button text */
-    padding: 4px 12px; /* Smaller button */
-    height: 28px; /* Match input height */
-    line-height: 1; /* Better text alignment */
-    margin-top: 0.2rem;
+    font-size: 0.6rem !important; /* 10px */
+    padding: 0.125rem 0.5rem !important; /* 2px 8px */
+    height: 1.75rem; /* 28px */
+    line-height: 1;
+    border-radius: 8px !important;
+    margin-top: 0.0625rem; /* 1px */
+  }
+
+  .middleText{
+    font-size: 0.8rem !important; /* 24px */
+    margin-top: 0.625rem; /* 10px */
+    margin-bottom: 0.625rem; /* 10px */
   }
 
   .bgRedBg {
     position: relative !important;
-    height: 100px !important; /* Adjust height for mobile */
-    width: 100% !important; /* Full width */
-    padding: 10rem;
+    height: 6.25rem !important; /* 100px */
+    width: 100% !important;
+    padding: 6.25rem;
     z-index: 10;
-    background-color: #D62A34;
-    /* justify-content: center !important; */
   }
 
-  /* Adjust the red box content */
   .bgRedBg {
-    padding: 0.5rem !important;
-    margin-top: 0.5rem !important;
-    margin-bottom: 0rem !important;
-    width: 90% !important; /* Make slightly narrower */
+    padding: 0.3125rem !important; /* 5px */
+    margin-top: 0.3125rem !important; /* 5px */
+    margin-bottom: 0 !important;
+    width: 90% !important;
   }
-  
-  .bgRedBg{
-    height: 20px; /* Smaller logo */
+
+  .bgRedBg p {
+    font-size: 0.625rem !important; /* 10px */
+    white-space: nowrap;
   }
-  .SetSEResolution{
-    margin-bottom: 10px !important;
-    font-size: 17px !important;
-  }
-  
+
   .logo-img {
-    height: 30px !important;
+    height: 1.875rem !important; /* 30px */
     object-fit: contain !important;
   }
-  
-  .bgRedBg p {
-    font-size: 10px !important;
-    margin-top: 0.5rem !important;
-    white-space: nowrap; /* Prevent text wrapping */
-  }
-
 
   .desktop-header {
     display: none;
   }
-
-  
-
-  
 }
+
+/* Tablet to small desktop (min-width: 768px) */
 @media (min-width: 768px) {
   .mobile-navbar,
   .mobile-footer {
@@ -286,17 +308,17 @@ html, body {
     padding-top: 0;
     padding-bottom: 0;
   }
-
 }
 
+/* Small Mobile adjustments */
 @media (max-width: 376px) {
-
-  .SetMarginClass{
-    margin: 10px 0px !important;
+  .SetMarginClass {
+    margin: 0.625rem 0 !important; /* 10px */
   }
 
-  .SetSEResolution{
-    margin-bottom: 5px !important;
-    font-size: 16px !important;
+  .SetSEResolution {
+    font-size: .8625rem !important; /* 17px */
   }
 }
+
+
