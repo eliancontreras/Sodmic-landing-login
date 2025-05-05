@@ -1,8 +1,8 @@
 /* Base font size set to 16px (1rem = 16px) */
-
-/* Global Font Size */
-html {
-  font-size: 16px; /* 1rem = 16px */
+:root {
+  --triangle-width: min(90vw, 70.5rem);
+  --triangle-aspect-ratio: 1 / 0.5;
+  --mobile-triangle-aspect-ratio: 1 / 0.75;
 }
 
 /* Font Face Definitions */
@@ -34,147 +34,167 @@ html {
   font-style: normal;
 }
 
-/* Bold Font */
-.bold-font {
-  font-family: 'BundayClean-bold', sans-serif;
-}
-.extra-bold {
-  font-family: 'BundayClean-ExBold', sans-serif;
-}
-.semi-Bold {
-  font-family: 'BundayClean-semiBold', sans-serif;
-}
-.semi-lignt {
-  font-family: 'BundayClean-seLighIt', sans-serif;
-}
+/* Font Classes */
+.bold-font { font-family: 'BundayClean-bold', sans-serif; }
+.extra-bold { font-family: 'BundayClean-ExBold', sans-serif; }
+.semi-Bold { font-family: 'BundayClean-semiBold', sans-serif; }
+.semi-lignt { font-family: 'BundayClean-seLighIt', sans-serif; }
 
-/* Basic Page Styles */
+/* Base Styles */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scroll */
+  overflow-y: hidden;
 }
 
+html {
+  font-size: 16px;
+}
+
+/* Background Styles */
 .page1__background {
   background: url('./images/loginpage/bg-Image.png') no-repeat center center fixed;
   background-size: cover;
   width: 100%;
-  height: 100vh; /* Exact viewport height */
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding-top: 3.75rem; /* 60px */
   box-sizing: border-box;
-  overflow: hidden;
-  padding-bottom: 7.5rem !important; /* 120px */
 }
 
-/* Triangle Section */
+/* Triangle Section - Improved Responsiveness */
 .page1__triangle {
-  width: 90vw;
-  max-width: 60.5rem; /* 1000px */
-  aspect-ratio: 1 / 0.5;
+  width: var(--triangle-width);
+  aspect-ratio: var(--triangle-aspect-ratio);
   background: url('./images/loginpage/middle-triangle.png') no-repeat center center;
   background-size: contain;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-  color: white;
+  align-items: flex-start;
   position: relative;
-  flex-shrink: 1;
+  flex-shrink: 0;
 }
 
 .triangle-content {
   position: absolute;
-  bottom: 10%;
+  bottom: 7%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 18.75rem; /* 300px */
+  max-width: 24rem;
+  padding: 0 1rem;
 }
 
-.page1__triangle form {
+/* Form Styles */
+.form-group-custom {
   width: 100%;
-
+  max-width: 20rem;
+  margin: 0 auto 1rem;
 }
 
-.logo-img {
-  height: 1.875rem; /* 30px */
-  object-fit: contain;
-}
-
-.page1__triangle .form-control {
-  background-color: rgba(255, 255, 255, 0.8);
+.custom-input {
+  width: 100%;
+  height: 3.3rem;
+  background-color: white;
   border: none;
-  padding: 0.375rem 0.625rem; /* 6px 10px */
-  margin-bottom: 0.5rem; /* 8px */
+  border-radius: 0;
+  padding: 0.375rem 0.625rem;
   text-align: center;
-  font-size: 0.85rem; /* 14px */
+  font-size: clamp(0.8rem, 2vw, 0.85rem);
+  font-family: 'BundayClean-seLighIt', sans-serif;
+  color: #000;
 }
 
-.page1__triangle h2 {
-  font-size: 1.1rem; /* 18px */
-  margin-bottom: 0.2rem; /* 3px */
-}
-
-.page1__triangle p {
-  font-size: 0.9rem; /* 14px */
-  margin-bottom: 0.5rem; /* 8px */
-}
-
-.page1__triangle button {
-  font-size: 0.85rem; /* 14px */
-  padding: 0.375rem 0.75rem; /* 6px 12px */
-}
-
-.SetSEResolution{
-  font-size: 2.725rem !important; /* 18px */
-  white-space: nowrap;
-}
-
-.btn{
-  padding: 4px 25px !important;
-  margin-top: 10px;
-  border-radius: 12px;
-  color: aliceblue;
+/* Button Styles */
+.btn {
+  padding: 0.625rem 2.1875rem !important;
+  margin-top: 0.625rem;
+  border-radius: 0.75rem;
+  color: white;
   background-color: #D62A34;
-  font-size: 1rem !important;  /* 18px */
+  font-size: 1.3rem !important;
   font-family: 'BundayClean-semiBold', sans-serif !important;
-
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.btn:hover{
+
+.btn:hover {
   background-color: #991f25;
+}
+
+/* Text Styles */
+.SetSEResolution {
+  font-size: clamp(1.5rem, 4vw, 2.125rem) !important;
+  white-space: nowrap;
+  margin-bottom: 1rem !important;
+  text-align: center;
+}
+
+.middleText {
+  font-size: clamp(1rem, 3vw, 1.8rem) !important;
+  margin: 0.625rem 0;
+  font-style: italic;
+  text-align: center;
   color: white;
 }
 
+.FontSize {
+  font-size: clamp(0.6rem, 1.5vw, 0.9625rem) !important;
+}
 
+/* Red Background Box */
+.bgRedBg {
+  width: 70vw;
+  max-width: 60.5rem;
+  height: auto;
+  min-height: 18vh;
+  padding: 1.7rem;
+  margin-top: auto;
+  /* margin-bottom: 2rem; */
+  background-color: #DB0122;
+  opacity: 0.88;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.bgRedBg p {
+  font-size: clamp(0.625rem, 1.5vw, 1rem) !important;
+  color: white;
+  margin-top: 0.5rem;
+}
 
+/* Logo Styles */
+.logo-img {
+  height: clamp(1.175rem, 3vw, 1.875rem);
+  object-fit: contain;
+}
+
+/* Mobile Navbar/Footer */
 .mobile-navbar {
   background-color: #076EBF;
   position: fixed;
   top: 0;
   width: 100%;
-  height: 5.625rem; /* 90px */
+  height: 5.625rem;
   z-index: 1000;
 }
 
-.logo-size {
-  margin-top: 0.9375rem; /* 15px */
-  height: 6.25rem; /* 100px */
-}
-
 .navbar-logo {
-  height: 1.875rem; /* 30px */
+  height: 1.875rem;
   width: auto;
 }
 
 .navbar-slogan {
-  height: 3.75rem; /* 60px */
+  height: 3.75rem;
   width: auto;
   position: absolute;
   left: 50%;
@@ -186,154 +206,176 @@ html, body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 3.75rem; /* 60px */
+  height: 3.75rem;
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.middleText{
-  font-size: 1.8rem !important; /* 24px */
-  margin-top: 0.625rem; /* 10px */
-  margin-bottom: 0.625rem; /* 10px */
-}
-
-.bgRedBg {
+/* Desktop Styles */
+.desktop-header {
   position: absolute;
-  bottom: 0px;
-  width: 70vw;
-  opacity: 0.88 !important;
-  max-width: 55.5rem; /* 1000px */  padding: 1.7rem;
-  z-index: 10;
-  background-color: #DB0122;
+  top: 3rem;
+  left: 3rem;
 }
 
-/* Mobile-specific layout (max-width: 1024px) */
+.logo-size {
+  height: 6.25rem;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
+
+  
+  .page1__triangle {
+    width: 85vw;
+  }
+  
+
+  .bgRedBg {
+    width: 90vw;
+  }
+}
+
+
+
+
+
+/* Update these parts in your existing CSS */
+
+@media (max-width: 768px) {
   .page1__background {
     background: url('./images/loginpage/mobileBg.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    padding-top: 3.75rem; /* 60px */
-    padding-bottom: 3.75rem; /* 60px */
-  }
-
-  .FontSize {
-    font-size: 0.5625rem !important; /* 9px */
+    padding-top: 5.625rem; /* Mobile navbar height */
+    padding-bottom: 3.75rem; /* Mobile footer height */
+    justify-content: center; /* Changed from center to flex-start */
+    overflow: hidden; /* Prevent scrolling */
   }
 
   .page1__triangle {
-    width: 90vw;
-    aspect-ratio: 1 / 0.75;
+    width: 90vw; /* Slightly wider */
+    aspect-ratio: 1 / 0.65; /* Taller aspect ratio */
     background-size: 100% 100%;
+    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+    flex-shrink: 1;
+    min-height: 0; /* Allow shrinking */
   }
 
   .triangle-content {
     width: 90%;
-    max-width: 17.5rem; /* 280px */
-    bottom: 3%;
+    max-width: 17.5rem;
+    bottom: 5%; /* Lower position */
+    padding: 0;
+    position: absolute;
+    transform: translateX(-50%) scale(0.9); /* Slightly smaller */
   }
 
-  .page1__triangle h2 {
-    font-size: 1rem !important; /* 16px */
-    margin-bottom: 0.125rem; /* 2px */
+  .form-group-custom {
+    max-width: 100%; /* Full width of container */
+    margin-bottom: 0.5rem;
   }
 
-  .page1__triangle p {
-    font-size: 0.5rem; /* 8px */
-    margin-bottom: 0.0625rem; /* 1px */
+  .custom-input {
+    height: 2.5rem;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem; /* Tighter padding */
   }
 
-  .page1__triangle .form-control {
-    padding: 0.125rem 0.25rem; /* 2px 4px */
-    font-size: 0.7rem; /* 11px */
-    margin-bottom: 0.25rem; /* 4px */
-    height: 1.75rem; /* 28px */
-    min-height: 1.75rem; /* 28px */
-    line-height: 1.2;
-  }
-
-  .page1__triangle form {
-    margin-top: -0.3125rem; /* -5px */
-  }
-
-  .page1__triangle button {
-    font-size: 0.7rem !important; /* 10px */
-    padding: 0rem 0.7rem !important; /* 2px 8px */
-    height: 1.75rem; /* 28px */
-    line-height: 0;
-    border-radius: 8px !important;
-    margin-top: 0.0625rem; /* 1px */
-    font-family: 'BundayClean-semiBold', sans-serif;
-
-    
-  }
-
-  .middleText{
-    font-size: 0.8rem !important; /* 24px */
-    margin-top: 0.625rem; /* 10px */
-    margin-bottom: 0.625rem; /* 10px */
-  }
-
-  .bgRedBg {
-    position: relative !important;
-    height: 6.25rem !important; /* 100px */
-    width: 100% !important;
-    padding: 6.25rem;
-    z-index: 10;
-    align-content: center !important;
-  }
-
-  .bgRedBg {
-    padding: 0.3125rem !important; /* 5px */
-    margin-top: 0.3125rem !important; /* 5px */
-    margin-bottom: 0 !important;
-    width: 90% !important;
-  }
-
-  .bgRedBg p {
-    font-size: 0.625rem !important; /* 10px */
-    white-space: nowrap;
-    margin-top: 0.55rem !important; 
-
-  }
-
-  .bgRedBg h3{
-    font-size: 1.275rem !important; /* 20px */
-  }
-
-  .logo-img {
-    height: 1.175rem !important; /* 30px */
-    object-fit: contain !important;
-  }
-
-  .desktop-header {
-    display: none;
-  }
-
-  
-}
-
-/* Tablet to small desktop (min-width: 768px) */
-@media (min-width: 768px) {
-  .mobile-navbar,
-  .mobile-footer {
-    display: none;
-  }
-
-  .page1__background {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-}
-
-/* Small Mobile adjustments */
-@media (max-width: 376px) {
-  .SetMarginClass {
-    margin: 0.625rem 0 !important; /* 10px */
+  .btn {
+    padding: 0.4rem 1.2rem !important;
+    font-size: 0.9rem !important;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   .SetSEResolution {
-    font-size: .8625rem !important; /* 17px */
+    font-size: 1.2rem !important;
+    margin-bottom: 0.5rem !important;
+    white-space: normal; /* Allow text wrapping */
+  }
+
+  .middleText {
+    font-size: 0.9rem !important;
+    margin: 0.5rem 0;
+  }
+
+  .bgRedBg {
+    width: 90% !important;
+    padding: 0.5rem !important;
+    margin: 0rem auto !important;
+    min-height: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .page1__triangle {
+    aspect-ratio: 1 / 0.8; /* Square aspect ratio on smallest screens */
+  }
+
+  .triangle-content {
+    bottom: 0%;
+    width: 50%;
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .custom-input {
+    height: 2.2rem;
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.3rem 1rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 
+@media (max-width: 396px) {
+  .page1__triangle {
+    aspect-ratio: 1 / 0.7; /* Square aspect ratio on smallest screens */
+  }
+
+  .triangle-content {
+    bottom: -5%;
+    width: 45%;
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .custom-input {
+    height: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.3rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .page1__triangle {
+    aspect-ratio: 1 / 0.8; /* Square aspect ratio on smallest screens */
+  }
+
+  .triangle-content {
+    bottom: -5%;
+    width: 45%;
+    transform: translateX(-50%) scale(0.85);
+  }
+
+  .custom-input {
+    height: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 0.3rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}

@@ -19,7 +19,7 @@
   <!-- ✅ Mobile Navbar -->
   <nav class="mobile-navbar d-block d-md-none navbar py-3 px-3 align-content-center">
     <div class="container-fluid d-flex justify-content-between align-items-center position-relative">
-      <img src="./images/loginpage/home-logo.png" alt="Logo" class="navbar-logo" />
+      <img src="./images/loginpage/logo-home-only.png" alt="Logo" class="navbar-logo" />
       <img src="./images/loginpage/logo.png" alt="Slogan" class="navbar-slogan" />
     </div>
   </nav>
@@ -36,18 +36,19 @@
     <!-- ✅ Triangle Section -->
     <main class="page1__triangle text-white">
       <div class="triangle-content">
-        <h2 class="fw-bold  mb-3 d-non d-md-block bold-font SetSEResolution">REGÍSTRATE AQUÍ</h2>
+        <h2 class=" mb-3 d-non d-md-block bold-font SetSEResolution">REGÍSTRATE AQUÍ</h2>
         <form class="d-flex flex-column align-items-center justify-content-center">
-          <div class="md-mt-2 d-flex flex-column col-6 col-md-12 align-items-center justify-content-center">
-            <p class="mb-1 text-center text-warning semi-lignt FontSize">NOMBRES Y APELLIDOS</p>
-            <input type="text" class="form-control semi-lignt rounded-0 bg-white" id="name" placeholder="" required>
+          <div class="form-group-custom">
+            <p class="mb-1 text-center text-warning semi-Bold FontSize">NOMBRES Y APELLIDOS</p>
+            <input type="text" class="form-control custom-input nonrounde" id="name" required>
           </div>
-          <div class="md-mb-3 d-flex flex-column col-6 col-md-12 align-items-center justify-content-center">
-            <p class="mb-1 text-center text-warning semi-lignt FontSize">EMAIL</p>
-            <input type="email" class="form-control semi-lignt rounded-0 bg-white" id="email" placeholder="" required>
+          <div class="form-group-custom">
+            <p class="mb-1 text-center text-warning semi-Bold FontSize">EMAIL</p>
+            <input type="email" class="form-control custom-input" id="email" required>
           </div>
           <button type="submit" class="btn">ENTRAR</button>
         </form>
+        
         
       </div>
     </main>
@@ -63,10 +64,7 @@
         <div class="col-auto p-0 m-0">
           <img src="./images/loginpage/home-logo.png" alt="Logo" class="logo-img mb-2 ">
         </div>
-        <div class="col-auto text-white px-1 pt-1 m-0">
-          <h3 class="m-0 fs-1 fs-md-2 bold-font">SODIMAC</h3>
-        </div>
-        <p class="text-white fs-5 whitespace-nowrap mb-0 bold-font ">
+        <p class="text-white fs-5 whitespace-nowrap mt-4 bold-font ">
           LUNES 12 DE MAYO / 09.00 HRS / WWW.ENCUENTROSODIMAC.CL
         </p>
       </div>
@@ -81,11 +79,7 @@
       <div class="col-auto mx-0 mb-2 p-0">
         <img src="./images/loginpage/home-logo.png" alt="Logo" class="logo-img m-0 p-0">
       </div>
-      <div class="col-auto text-white p-1">
-        <p class="m-0 fs-5 fs-md-4 bold-font pt-1">
-          SODIMAC<sup class="small align-text-bottom ">®</sup>
-        </p>
-      </div>
+    
       
     </div>
   </footer>
